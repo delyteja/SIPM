@@ -18,6 +18,7 @@ return [
         'passwords' => 'users',
     ],
 
+ 
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -36,7 +37,7 @@ return [
     */
 
     'guards' => [
-        'web' => [
+         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
@@ -45,6 +46,17 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+
     ],
 
     /*
@@ -58,7 +70,7 @@ return [
     |
     | If you have multiple user tables or models you may configure multiple
     | sources which represent each model / table. These sources may then
-    | be assigned to any extra authentication guards you have defined.
+    | be assigned to any extra authentication guards yo  u have defined.
     |
     | Supported: "database", "eloquent"
     |
@@ -68,6 +80,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
         ],
 
         // 'users' => [
@@ -96,6 +113,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 
