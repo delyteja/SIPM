@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">USER Dashboard</div>
 
+
                 <div class="panel-body">
                     You are logged in as USER!
                 </div>

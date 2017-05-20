@@ -21,6 +21,9 @@ Route::get('test', function()
 });
 Auth::routes();
 
+Route::get('/profile','UserController@profile');
+Route::post('/updateprofile','UserController@update'); 
+
 Route::get('/home', 'HomeController@index');
 Route::prefix('admin')->group(function()
 {
@@ -30,4 +33,8 @@ Route::prefix('admin')->group(function()
 
 
 });
+// secara konsep muncul ketika hit tombol
+
+Route::get('/createusaha','PostinganController@create');
+Route::any('/submitpostingan','PostinganController@store');
 

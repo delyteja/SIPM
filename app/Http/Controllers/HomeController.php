@@ -25,4 +25,25 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function edit(dosen $dosen)
+    {
+        //
+        $dsn = dosen::findorfail($dosen);
+       return view ('dosen.edit',compact('dsn'));
+
+    }
+
+     public function update(Request $request, dosen $dosen)
+    {
+        //
+        $dsn = dosen::findorfail($dosen);
+        $dsn->update($request->all());
+        return redirect('/dosen');
+
+
+    }
+
+
+
 }
