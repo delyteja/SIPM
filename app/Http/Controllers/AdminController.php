@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Message;
+use App\User;
+use App\Postingan;
 
 class AdminController extends Controller
 {
@@ -22,8 +24,21 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-        public function index()
-        {
-        return view('admin');
-        }
+    public function index()
+    {
+        $posts = Postingan::All();
+        return view('admins.admin', compact('posts'));
+    }
+    public function manageMessage()
+    {
+        $message = Message::All();
+         return view('admins.message')->withMessages($message);
+    }
+    public function manageUser()
+    {
+        $user = User::All();
+        return view('admins.user')->withUsers($user);
+    }
+    
+    
 }

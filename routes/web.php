@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('test', function()
@@ -20,21 +20,77 @@ Route::get('test', function()
 	return App\Chat::where('id',1)->first();
 });
 Auth::routes();
+// <<<<<<< aebbb64d3c2f3b138dc567416b5d54b50f2f5d2d
+Route::get('/index', 'UserController@index');  // dasboard user
+Route::get('createpostingan','PostinganController@create');
+Route::post('/submitpostingan','PostinganController@store');  // DIGANTI
+Route::get('/postingan/{id}','PostinganController@edit');
+Route::post('/update/{id}','PostinganController@update');
+Route::get('/home', 'UserController@index');
+Route::get('/delpostingan/{id}/pilihan/{token}','PostinganController@delete');
 
-Route::get('/profile','UserController@profile');
-Route::post('/updateprofile','UserController@update'); 
+// =======
 
-Route::get('/home', 'HomeController@index');
+
+
+
+//Route::get('/home', 'HomeController@index');
+// >>>>>>> 64cfd73fbac519d0c8a75a645e0857f08ee56e0f
 Route::prefix('admin')->group(function()
 {
 	Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+	Route::get('/message', 'AdminController@manageMessage')->name('admin.message');
+	Route::get('/user', 'AdminController@manageUser')->name('admin.user');
+	Route::get('/deleteuser/{id}', 'AdminController@deleteUser')->name('admin.deleteuser');
+	Route::get('/delpost/{id}/pilihan/{token}', 'PostinganController@delete');
+});
 
 
+Route::prefix('message')->group(function()
+{
+	Route::get('/inbox','MessageController@showinbox')->name('inbox');
+	Route::get('/newmessage','MessageController@shownewmessage')->name('newmessage');
+	Route::post('/newmessage','MessageController@newmessage')->name('newmessage.submit');
+	Route::get('/sent','MessageController@showsent')->name('sent');
+	Route::get('/showmessage/{id}','MessageController@showmessage')->name('showmessage');
+	Route::get('/deletemessage/{id}','MessageController@deletemessage')->name('deletemessage');
 });
 // secara konsep muncul ketika hit tombol
 
+Route::prefix('pebisnis')->group(function() 
+{
+	Route::prefix('message')->group(function()
+	{
+		Route::get('/inbox','MessageController@showinboxpebisnis')->name('inbox');
+		Route::get('/newmessage','MessageController@shownewmessagepebisnis')->name('newmessage');
+		Route::post('/newmessage','MessageController@newmessagepebisnis')->name('newmessage.submit');
+		Route::get('/sent','MessageController@showsentpebisnis')->name('sent');
+		Route::get('/showmessage/{id}','MessageController@showmessagepebisnis')->name('showmessage');
+		Route::get('/deletemessage/{id}','MessageController@deletemessagepebisnis')->name('deletemessage');
+	});
+	Route::get('/', 'PebisnisController@index');
+	Route::get('/PakDani', 'PebisnisController@PakDani');
+	Route::get('/PakDani/laporan', 'PebisnisController@laporan')->name('laporanPakDani');
+});
+
 Route::get('/createusaha','PostinganController@create');
-Route::any('/submitpostingan','PostinganController@store');
+
+Route::get('/profile','UserController@profile');
+Route::post('/profile','UserController@update_avatar');
+
+Route::get('/startup','UserController@startup');
+// Route::get('/work','UserController@work');
+Route::get('/work',function(){
+	return view('user.work');
+});
+
+
+Route::get('/wirausaha','UserController@wirausaha');
+Route::get('/PakDani','UserController@PakDani');
+Route::get('/laporan','UserController@laporan');
+Route::get('/dashboard','Controller@dashboard');
+
+
 

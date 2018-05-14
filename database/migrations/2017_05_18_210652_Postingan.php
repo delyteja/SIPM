@@ -15,8 +15,9 @@ class Postingan extends Migration
     {
         Schema::create('postingans', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('namausaha');
+            $table->string('kategori');
             $table->integer('biaya');
             $table->string('tempatusaha');
             $table->string('namafoto');

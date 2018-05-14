@@ -1,5 +1,6 @@
 <?php
-
+// DIGUNAKAN HANYA SAAT USER BUKA WEB, LOGIN ATAU REGISTER -> di user
+// controller untuk interface user saat pertama kali masuk web
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -23,26 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('user.index');
     }
 
-    public function edit(dosen $dosen)
-    {
-        //
-        $dsn = dosen::findorfail($dosen);
-       return view ('dosen.edit',compact('dsn'));
-
-    }
-
-     public function update(Request $request, dosen $dosen)
-    {
-        //
-        $dsn = dosen::findorfail($dosen);
-        $dsn->update($request->all());
-        return redirect('/dosen');
 
 
-    }
 
 
 
