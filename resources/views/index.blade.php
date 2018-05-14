@@ -7,8 +7,7 @@ Home
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 @endsection
 @section('nav-right')
-    <li><a href="{{ URL::to('register')}}" style="color:white"><i class="fa fa-registered" aria-hidden="true"></i>Register</a></li>
-     <li><a href="{{ URL::to('login')}}" style="color:white"> <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+    @include('layouts/user_nav')
 @endsection
 
 @section('content')

@@ -89,7 +89,7 @@ Route::get('/work',function(){
 
 Route::get('/wirausaha','UserController@wirausaha');
 Route::get('/PakDani','UserController@PakDani');
-Route::get('/laporan','UserController@laporan');
+Route::get('/laporan','UserController@laporan')->name('laporan');
 Route::get('/dashboard','Controller@dashboard');
 
 

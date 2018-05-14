@@ -19,6 +19,12 @@
               <input class="form-control" name="jumlah_investasi" id="jumlah_investasi" placeholder="Masukkan jumlah uang untuk diinvestasikan">
             </div> 
           </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Bukti Transfer</label>
+            <div class="col-sm-9">
+              {!! Form::file('bukti_transfer', null, array('class' => 'form-control','placeholder'=>'Bukti Transfer')) !!}
+            </div> 
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
