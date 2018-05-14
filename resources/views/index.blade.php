@@ -6,8 +6,14 @@ Home
 @section('new-css')
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 @endsection
+
 @section('nav-right')
-    @include('layouts/user_nav')
+  @if (Auth::guest())
+    <li><a href="{{ URL::to('register')}}" style="color:white"><i class="fa fa-registered" aria-hidden="true"></i>Register</a></li>
+    <li><a href="{{ URL::to('login')}}" style="color:white"> <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+  @else
+      @include('layouts/user_nav')
+  @endif
 @endsection
 
 @section('content')

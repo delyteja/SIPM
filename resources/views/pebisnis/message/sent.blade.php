@@ -16,13 +16,13 @@ Sent Message
                 <div class="panel-heading">Message - Sent</div>
 
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('newmessage') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_newmessage') }}'">
                       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  New Message 
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('inbox') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_inbox') }}'">
                       <span class="glyphicon glyphicon-save" aria-hidden="true"></span>  Inbox Message
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('sent') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_sent') }}'">
                       <span class="glyphicon glyphicon-open" aria-hidden="true"></span>  Sent Message
                     </button>
                     <div class="table-responsive">
@@ -39,8 +39,8 @@ Sent Message
                                     <td class="col-md-2">{{$sent->receiver}}</td>
                                     <td class="col-md-4">{{substr($sent->msg,0,50)}}{{strlen($sent->msg) > 50 ? ". . .":""}}</td>
                                     <td class="col-md-2">{{$sent->updated_at}}</td>
-                                    <td class="col-md-2"><a href="{{route('showmessage',$sent->id)}}" class="btn btn-default">View</a>
-                                    <a href="{{route('deletemessage',$sent->id)}}" class="btn btn-default">Delete</a></td>
+                                    <td class="col-md-2"><a href="{{route('pebisnis_showmessage',$sent->id)}}" class="btn btn-default">View</a>
+                                    <a href="{{route('pebisnis_deletemessage',$sent->id)}}" class="btn btn-default">Delete</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

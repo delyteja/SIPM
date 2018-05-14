@@ -18,16 +18,16 @@ New Message
                 <div class="panel-heading">Message - NewMessage</div>
 
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('newmessage') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_newmessage') }}'">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  New Message 
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('inbox') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_inbox') }}'">
                         <span class="glyphicon glyphicon-save" aria-hidden="true"></span>  Inbox Message
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('sent') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pebisnis_sent') }}'">
                         <span class="glyphicon glyphicon-open" aria-hidden="true"></span>  Sent Message
                     </button>
-                    <form class="form-group" role="form" method="POST" action="{{ route('newmessage.submit') }}">
+                    <form class="form-group" role="form" method="POST" action="{{ route('pebisnis_newmessage.submit') }}">
                      {{ csrf_field() }}
                         <div class="form-group">
                             <label for="receiver">To</label>

@@ -6,9 +6,16 @@ use App\Message;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Auth;
+use Auth;
+
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');     // 
+    }
+
     public function showinbox()
     {
         $inbox = Message::All()->where('receiver',Auth::user()->email);

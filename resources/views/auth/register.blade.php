@@ -75,6 +75,9 @@
                                     Register
                                 </button>
                             </div>
+                            <div class="col-md-2">
+                                <a href='{{ route("login") }}' class="btn btn-success pull-right">Login</a>
+                            </div>
                         </div>
                     </form>
                 </div>

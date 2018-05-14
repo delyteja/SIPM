@@ -50,6 +50,11 @@ class UserController extends Controller
         return view('user.work');
     }
 
+    public function true_index()
+    {
+        return view('index');
+    }
+
 
 
     public function update_avatar(Request $request)

@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+//Route::get('/', 'UserController@true_index');
 Route::get('test', function()
 {
 	return App\Chat::where('id',1)->first();
@@ -63,12 +64,12 @@ Route::prefix('pebisnis')->group(function()
 {
 	Route::prefix('message')->group(function()
 	{
-		Route::get('/inbox','MessageController@showinboxpebisnis')->name('inbox');
-		Route::get('/newmessage','MessageController@shownewmessagepebisnis')->name('newmessage');
-		Route::post('/newmessage','MessageController@newmessagepebisnis')->name('newmessage.submit');
-		Route::get('/sent','MessageController@showsentpebisnis')->name('sent');
-		Route::get('/showmessage/{id}','MessageController@showmessagepebisnis')->name('showmessage');
-		Route::get('/deletemessage/{id}','MessageController@deletemessagepebisnis')->name('deletemessage');
+		Route::get('/inbox','MessageController@showinboxpebisnis')->name('pebisnis_inbox');
+		Route::get('/newmessage','MessageController@shownewmessagepebisnis')->name('pebisnis_newmessage');
+		Route::post('/newmessage','MessageController@newmessagepebisnis')->name('pebisnis_newmessage.submit');
+		Route::get('/sent','MessageController@showsentpebisnis')->name('pebisnis_sent');
+		Route::get('/showmessage/{id}','MessageController@showmessagepebisnis')->name('pebisnis_showmessage');
+		Route::get('/deletemessage/{id}','MessageController@deletemessagepebisnis')->name('pebisnis_deletemessage');
 	});
 	Route::get('/', 'PebisnisController@index');
 	Route::get('/PakDani', 'PebisnisController@PakDani');

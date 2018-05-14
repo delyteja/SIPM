@@ -3,9 +3,9 @@
 User
 @endsection
 
-@section('nav-right')
-  @include('layouts/user_nav')
-@endsection
+  @section('nav-right')
+    @include('layouts/user_nav')
+  @endsection
 
 
 @section('content')
