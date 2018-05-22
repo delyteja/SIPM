@@ -1,4 +1,4 @@
-@extends('template.master_pebisnis')
+@extends('template.master_pemodal')
 @section('judul')
 Usaha Warung Pak Dani
 @endsection
@@ -68,6 +68,6 @@ Usaha Warung Pak Dani
 
 </div>
 <!-- /.container -->
-@include('pebisnis/investasi')
+@include('pemodal/investasi')
 
 @endsection

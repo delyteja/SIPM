@@ -1,4 +1,4 @@
-@extends('template.master')
+@extends('template.master_pemodal')
 
 @section('judul')
 Inbox
@@ -16,13 +16,13 @@ Inbox
                 <div class="panel-heading">Pesan - Pesan Masuk</div>
 
                 <div class="panel-body">
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('newmessage') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pemodal_newmessage') }}'">
                       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>  Pesan Baru 
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('inbox') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pemodal_inbox') }}'">
                       <span class="glyphicon glyphicon-save" aria-hidden="true"></span>  Pesan Masuk
                     </button>
-                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('sent') }}'">
+                    <button type="button" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='{{ route('pemodal_sent') }}'">
                       <span class="glyphicon glyphicon-open" aria-hidden="true"></span>  Pesan Terkirim
                     </button>
                     <div class="table-responsive">
@@ -39,8 +39,8 @@ Inbox
                                     <td class="col-md-2">{{$inbox->sender}}</td>
                                     <td class="col-md-4">{{substr($inbox->msg,0,50)}}{{strlen($inbox->msg) > 50 ? ". . .":""}}</td>
                                     <td class="col-md-2">{{$inbox->updated_at}}</td>
-                                    <td class="col-md-2"><a href="{{route('showmessage',$inbox->id)}}" class="btn btn-default">Lihat</a>
-                                    <a href="{{route('deletemessage',$inbox->id)}}" class="btn btn-default">Hapus</a></td>
+                                    <td class="col-md-2"><a href="{{route('pemodal_showmessage',$inbox->id)}}" class="btn btn-default">Lihat</a>
+                                    <a href="{{route('pemodal_deletemessage',$inbox->id)}}" class="btn btn-default">Hapus</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

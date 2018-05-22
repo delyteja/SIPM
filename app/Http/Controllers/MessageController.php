@@ -55,16 +55,16 @@ class MessageController extends Controller
     	 return redirect()->back();
     }
 
-    public function showinboxpebisnis()
+    public function showinboxpemodal()
     {
         $inbox = Message::All()->where('receiver',Auth::user()->email);
-        return view('pebisnis.message.inbox')->withInboxs($inbox);
+        return view('pemodal.message.inbox')->withInboxs($inbox);
     }
-    public function shownewmessagepebisnis()
+    public function shownewmessagepemodal()
     {
-        return view('pebisnis.message.newmessage');
+        return view('pemodal.message.newmessage');
     }
-    public function newmessagepebisnis(Request $request)
+    public function newmessagepemodal(Request $request)
     {
   		$this->validate($request,[
     		'receiver' => 'required|email',
@@ -77,17 +77,17 @@ class MessageController extends Controller
   		$message->save();
         return redirect()->route('sent');
     }
-    public function showsentpebisnis()
+    public function showsentpemodal()
     {
     	$sent = Message::All()->where('sender',Auth::user()->email);
-        return view('pebisnis.message.sent')->withSents($sent);
+        return view('pemodal.message.sent')->withSents($sent);
     }
-    public function showmessagepebisnis($id)
+    public function showmessagepemodal($id)
     {
     	 $show = Message::find($id);
-    	 return view('pebisnis.message.showmessage')->withShows($show);
+    	 return view('pemodal.message.showmessage')->withShows($show);
     }
-    public function deletemessagepebisnis($id)
+    public function deletemessagepemodal($id)
     {
     	 $delete = Message::find($id);
     	 $delete->delete();

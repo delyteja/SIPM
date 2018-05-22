@@ -12,7 +12,7 @@
   <link rel="icon" href="{{asset ('img/favicon.png')}}" type="image/png">
 </head>
 <body>
-@include('template.header_pebisnis')
+@include('template.header_pemodal')
 
 
   <!-- Thumbnail -->

@@ -9,11 +9,11 @@
       </a>
       <ul class="dropdown-menu" role="menu" style="background-color: black;">
           <li>
-          <a href="{{ url('/profile')}}"><i class="fa fa-btn fa-user"></i> Profile</a>
+          <a href="{{ url('/profile')}}"><i class="fa fa-btn fa-user"></i> Profil</a>
               <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i>
-                  Logout
+                  Keluar Akun
               </a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   {{ csrf_field() }}

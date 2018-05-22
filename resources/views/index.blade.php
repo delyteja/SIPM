@@ -9,8 +9,8 @@ Home
 
 @section('nav-right')
   @if (Auth::guest())
-    <li><a href="{{ URL::to('register')}}" style="color:white; font-size:17px;"><i class="fa fa-registered" aria-hidden="true" style="font-size:15px;"></i>Register</a></li>
-    <li><a href="{{ URL::to('login')}}" style="color:white; font-size:17px;"> <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+    <li><a href="{{ URL::to('register')}}" style="color:white; font-size:17px;"><i class="fa fa-registered" aria-hidden="true" style="font-size:15px;"></i>Daftar</a></li>
+    <li><a href="{{ URL::to('login')}}" style="color:white; font-size:17px;"> <i class="fa fa-sign-in" aria-hidden="true"></i>Masuk</a></li>
   @else
       @include('layouts/user_nav')
   @endif

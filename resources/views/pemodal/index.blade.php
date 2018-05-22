@@ -1,4 +1,4 @@
-@extends('template.master_pebisnis')
+@extends('template.master_pemodal')
 @section('judul')
 Home
 @endsection
@@ -25,7 +25,7 @@ Home
         <div class="col-sm-4">
           <div class="thumbnail">
             <img src="{{asset ('img/warung.jpg')}}" alt="Buku" width="400" height="200">
-            <a href="{{ URL::to('/pebisnis/PakDani')}}"><p><strong>Usaha Warung Pak Dani</strong></p></a>
+            <a href="{{ URL::to('/pemodal/PakDani')}}"><p><strong>Usaha Warung Pak Dani</strong></p></a>
             <div class="w3-light-grey w3-round-large">
               <div class="w3-container w3-blue w3-round-large" style="width:25%">25%</div>
             </div>

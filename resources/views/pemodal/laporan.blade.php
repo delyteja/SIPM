@@ -1,4 +1,4 @@
-@extends('template.master_pebisnis')
+@extends('template.master_pemodal')
 @section('judul')
 Laporan Pendanaan
 @endsection

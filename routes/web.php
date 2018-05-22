@@ -60,20 +60,20 @@ Route::prefix('message')->group(function()
 });
 // secara konsep muncul ketika hit tombol
 
-Route::prefix('pebisnis')->group(function() 
+Route::prefix('pemodal')->group(function() 
 {
 	Route::prefix('message')->group(function()
 	{
-		Route::get('/inbox','MessageController@showinboxpebisnis')->name('pebisnis_inbox');
-		Route::get('/newmessage','MessageController@shownewmessagepebisnis')->name('pebisnis_newmessage');
-		Route::post('/newmessage','MessageController@newmessagepebisnis')->name('pebisnis_newmessage.submit');
-		Route::get('/sent','MessageController@showsentpebisnis')->name('pebisnis_sent');
-		Route::get('/showmessage/{id}','MessageController@showmessagepebisnis')->name('pebisnis_showmessage');
-		Route::get('/deletemessage/{id}','MessageController@deletemessagepebisnis')->name('pebisnis_deletemessage');
+		Route::get('/inbox','MessageController@showinboxpemodal')->name('pemodal_inbox');
+		Route::get('/newmessage','MessageController@shownewmessagepemodal')->name('pemodal_newmessage');
+		Route::post('/newmessage','MessageController@newmessagepemodal')->name('pemodal_newmessage.submit');
+		Route::get('/sent','MessageController@showsentpemodal')->name('pemodal_sent');
+		Route::get('/showmessage/{id}','MessageController@showmessagepemodal')->name('pemodal_showmessage');
+		Route::get('/deletemessage/{id}','MessageController@deletemessagepemodal')->name('pemodal_deletemessage');
 	});
-	Route::get('/', 'PebisnisController@index');
-	Route::get('/PakDani', 'PebisnisController@PakDani');
-	Route::get('/PakDani/laporan', 'PebisnisController@laporan')->name('laporanPakDani');
+	Route::get('/', 'PemodalController@index');
+	Route::get('/PakDani', 'PemodalController@PakDani');
+	Route::get('/PakDani/laporan', 'PemodalController@laporan')->name('laporanPakDani');
 });
 
 Route::prefix('laporan')->group(function()

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 
-class PebisnisController extends Controller
+class PemodalController extends Controller
 {
 	public function __construct()
     {
@@ -13,19 +13,19 @@ class PebisnisController extends Controller
     }
     
     public function index() {
-    	return view('pebisnis.index');
+    	return view('pemodal.index');
     }
 
     public function PakDani () {
-    	return view('pebisnis.PakDani');
+    	return view('pemodal.PakDani');
     }
 
     public function laporan() {
-    	return view('pebisnis.laporan');
+    	return view('pemodal.laporan');
     }
 
     public function tambah_laporan()
     {
-        return view('pebisnis.tambah_laporan');
+        return view('pemodal.tambah_laporan');
     }
 }
