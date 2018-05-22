@@ -27,6 +27,8 @@
       -->
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/_all-skins.min.css")}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app-template.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+	  <!-- <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/geolocation.css")}}" /> -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,6 +89,7 @@
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
       fixed layout. -->
+      
       <script>
       $(document).ready(function() {
         //Date picker
@@ -107,6 +110,7 @@
           format: 'yyyy/mm/dd'
         });
     });
+
 </script>
 <script src="{{ asset('js/site.js') }}"></script>
   </body>

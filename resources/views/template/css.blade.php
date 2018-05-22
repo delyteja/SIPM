@@ -127,6 +127,7 @@ h4 {
       letter-spacing: 0spx;
       border-radius: 0;
       font-family: Montserrat, sans-serif;
+      padding-top:15px;
     }
     .navbar li a, .navbar .navbar-brand {
       color: #fff !important;

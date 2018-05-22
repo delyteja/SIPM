@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('template.master')
 
 @section('content')
-<div class="container" style="margin-bottom:150px;">
-    <div class="row">
+<div class="container" style="margin-bottom:205px;">
+    <div class="row" style="margin-top:50px;">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
@@ -27,7 +27,6 @@
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
-
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
 

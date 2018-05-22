@@ -39,6 +39,11 @@ class AdminController extends Controller
         $user = User::All();
         return view('admins.user')->withUsers($user);
     }
+
+    public function location()
+    {
+        return view('admins.location2');
+    }
     
     
 }

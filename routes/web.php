@@ -76,22 +76,26 @@ Route::prefix('pebisnis')->group(function()
 	Route::get('/PakDani/laporan', 'PebisnisController@laporan')->name('laporanPakDani');
 });
 
+Route::prefix('laporan')->group(function()
+{
+	Route::get('/index','laporanController@index')->name('laporan');
+	Route::get('/add','laporanController@add');
+	Route::post('/store','laporanController@store');
+	Route::get('/edit/{id}','laporanController@edit');
+	Route::get('/delete/{id}','laporanController@delete');
+	
+});
+
 Route::get('/createusaha','PostinganController@create');
 
 Route::get('/profile','UserController@profile');
 Route::post('/profile','UserController@update_avatar');
 
 Route::get('/startup','UserController@startup');
-// Route::get('/work','UserController@work');
-Route::get('/work',function(){
-	return view('user.work');
-});
-
-
 Route::get('/wirausaha','UserController@wirausaha');
 Route::get('/PakDani','UserController@PakDani');
-Route::get('/laporan','UserController@laporan')->name('laporan');
 Route::get('/dashboard','Controller@dashboard');
+Route::get('/location','AdminController@location');
 
 
 

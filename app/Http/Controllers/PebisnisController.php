@@ -23,4 +23,9 @@ class PebisnisController extends Controller
     public function laporan() {
     	return view('pebisnis.laporan');
     }
+
+    public function tambah_laporan()
+    {
+        return view('pebisnis.tambah_laporan');
+    }
 }

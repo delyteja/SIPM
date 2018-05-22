@@ -9,8 +9,8 @@ Home
 
 @section('nav-right')
   @if (Auth::guest())
-    <li><a href="{{ URL::to('register')}}" style="color:white"><i class="fa fa-registered" aria-hidden="true"></i>Register</a></li>
-    <li><a href="{{ URL::to('login')}}" style="color:white"> <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+    <li><a href="{{ URL::to('register')}}" style="color:white; font-size:17px;"><i class="fa fa-registered" aria-hidden="true" style="font-size:15px;"></i>Register</a></li>
+    <li><a href="{{ URL::to('login')}}" style="color:white; font-size:17px;"> <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
   @else
       @include('layouts/user_nav')
   @endif
@@ -18,8 +18,8 @@ Home
 
 @section('content')
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active"><a href="#newpost" aria-controls="newpost" role="tab" data-toggle="tab">New Post</a></li>
-  <li role="presentation"><a href="#favourites" aria-controls="favourites" role="tab" data-toggle="tab">Favourites</a></li>
+  <li role="presentation" class="active"><a href="#newpost" aria-controls="newpost" role="tab" data-toggle="tab">Postingan Terbaru</a></li>
+  <li role="presentation"><a href="#favourites" aria-controls="favourites" role="tab" data-toggle="tab">Favorit</a></li>
 </ul>
 <!-- <br> -->
 <div class="tab-content">

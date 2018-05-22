@@ -47,9 +47,7 @@ class PostinganController extends Controller
     	}
 
     	$simpan->save();
-        //return view('user.index');
-        return redirect('/index');
-
+        return redirect()->action('UserController@index')->with('sukses', 'Postingan Anda Berhasil Ditambahkan');
     	
     }
 

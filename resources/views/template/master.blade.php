@@ -14,7 +14,14 @@
 <body>
 @include('template.header')
 
-
+@if (session()->has('sukses'))
+            <div class="container">
+                <div class="alert alert-success col-md-11">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    {{ session()->get('sukses') }}
+                </div>
+            </div>
+@endif
   <!-- Thumbnail -->
   <div class="container text-center bg-grey">
     <div class="row">

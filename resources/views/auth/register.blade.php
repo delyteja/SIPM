@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('template.master')
 @section('content')
 <div class="container" style="margin-bottom:150px;">
     <div class="row">
